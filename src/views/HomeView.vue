@@ -8,6 +8,11 @@ export default defineComponent({
   components: {
     TheWelcome,
     MyButton
+  },
+  methods: {
+    onAddBook(payload: any) {
+      console.log(payload);
+    }
   }
 })
 </script>
@@ -16,7 +21,7 @@ export default defineComponent({
   <main>
 
     <div>
-      <MyButton :text="'我的按鈕'"></MyButton>
+      <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
     </div>
 
     <TheWelcome />

@@ -23,12 +23,18 @@ export default defineComponent({
         return ['success', 'warning', 'danger'].includes(value)
       }
     }
+  },
+  emits: {
+    addBook(payload: { bookName: string }) {
+      // perform runtime validation
+      return payload.bookName.length > 0
+    }
   }
 })
 </script>
 
 <template>
-  <button>
+  <button @click="$emit('addBook', { bookName: 'mybook' })">
     {{ text }}
   </button>
 </template>
