@@ -10,7 +10,7 @@ export default defineComponent({
 <template>
   <div class="my-slot">
     <header>
-      <slot name="header"></slot>
+      <slot name="header" foo="bar"></slot>
     </header>
     <main>
       <slot name="default"></slot>

@@ -49,8 +49,10 @@ export default defineComponent({
         </div> -->
 
         <MySlot>
-          <template #header>
-            header
+          <template #header="{ foo }">
+            <div>
+              header {{ foo }}
+            </div>
           </template>
           <template #default>
             body
