@@ -1,10 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HomeView from './views/HomeView.vue'
+import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
   components: {
-    HomeView
+    HomeView,
+    HelloWorld
   }
 })
 </script>
@@ -23,7 +25,7 @@ export default defineComponent({
     </div>
   </header>
 
-  <HomeView></HomeView>
+  <HomeView />
 </template>
 
 <style>
