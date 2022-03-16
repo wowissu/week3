@@ -1,7 +1,12 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue'
+
+export default defineComponent({
+  name: 'HelloWorld',
+  props: {
+    msg: String as PropType<string>
+  }
+})
 </script>
 
 <template>
