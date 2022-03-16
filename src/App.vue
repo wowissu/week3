@@ -2,15 +2,17 @@
 import { defineComponent } from 'vue'
 import HomeView from './views/HomeView.vue'
 import HelloWorld from './components/HelloWorld.vue';
-import MyButton from '@/components/MyButton.vue'
-import MyInput from '@/components/MyInput.vue'
+// import MyButton from '@/components/MyButton.vue'
+// import MyInput from '@/components/MyInput.vue'
+import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
 
 export default defineComponent({
   components: {
     HomeView,
     HelloWorld,
-    MyButton,
-    MyInput
+    // MyButton,
+    // MyInput,
+    FallthroughAttributes
   },
   data() {
     return {
@@ -30,13 +32,19 @@ export default defineComponent({
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <!-- <HelloWorld msg="You did it!" /> -->
 
       <div>
-        <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
-      </div>
-      <div>
-        <MyInput v-model.capitalize="myText"></MyInput>
+        <!-- <div>
+          <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
+        </div>
+        <div>
+          <MyInput v-model.capitalize="myText"></MyInput>
+        </div> -->
+
+        <div>
+          <FallthroughAttributes class="my-class" text="Fallthrough Attributes" />
+        </div>
       </div>
 
       <nav>
@@ -46,7 +54,7 @@ export default defineComponent({
     </div>
   </header>
 
-  <HomeView />
+  <HomeView  />
 </template>
 
 <style>
