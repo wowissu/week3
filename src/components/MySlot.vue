@@ -8,7 +8,15 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
-    <slot></slot>
+  <div class="my-slot">
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <main>
+      <slot name="default"></slot>
+    </main>
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
   </div>
 </template>

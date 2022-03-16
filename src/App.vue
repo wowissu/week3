@@ -49,7 +49,15 @@ export default defineComponent({
         </div> -->
 
         <MySlot>
-          slot content
+          <template #header>
+            header
+          </template>
+          <template #default>
+            body
+          </template>
+          <template #footer>
+            footer
+          </template>
         </MySlot>
       </div>
 
