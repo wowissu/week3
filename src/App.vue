@@ -2,11 +2,25 @@
 import { defineComponent } from 'vue'
 import HomeView from './views/HomeView.vue'
 import HelloWorld from './components/HelloWorld.vue';
+import MyButton from '@/components/MyButton.vue'
+import MyInput from '@/components/MyInput.vue'
 
 export default defineComponent({
   components: {
     HomeView,
-    HelloWorld
+    HelloWorld,
+    MyButton,
+    MyInput
+  },
+  data() {
+    return {
+      myText: ''
+    }
+  },
+  methods: {
+    onAddBook(payload: any) {
+      console.log(payload);
+    }
   }
 })
 </script>
@@ -17,6 +31,13 @@ export default defineComponent({
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+
+      <div>
+        <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
+      </div>
+      <div>
+        <MyInput v-model.capitalize="myText"></MyInput>
+      </div>
 
       <nav>
         <!-- <RouterLink to="/">Home</RouterLink>
