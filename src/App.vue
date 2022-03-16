@@ -1,18 +1,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import HomeView from './views/HomeView.vue'
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
 // import MyButton from '@/components/MyButton.vue'
 // import MyInput from '@/components/MyInput.vue'
-import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
+// import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
+import MySlot from '@/components/MySlot.vue'
 
 export default defineComponent({
   components: {
     HomeView,
-    HelloWorld,
+    MySlot
+    // HelloWorld,
     // MyButton,
     // MyInput,
-    FallthroughAttributes
+    // FallthroughAttributes
   },
   data() {
     return {
@@ -42,9 +44,13 @@ export default defineComponent({
           <MyInput v-model.capitalize="myText"></MyInput>
         </div> -->
 
-        <div>
-          <FallthroughAttributes class="my-class" text="Fallthrough Attributes" />
-        </div>
+        <!-- <div>
+          <FallthroughAttributes class="my-class" text="Fallthrough Attributes">
+        </div> -->
+
+        <MySlot>
+          slot content
+        </MySlot>
       </div>
 
       <nav>
