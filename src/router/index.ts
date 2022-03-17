@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 import TheWelcome from '@/components/TheWelcome.vue'
 
 const router = createRouter({
@@ -13,7 +14,17 @@ const router = createRouter({
         {
           name: 'TheWelcome',
           path: 'TheWelcome',
-          component: TheWelcome
+          props: {
+            header() {
+              return {
+                msg: 'hihi'
+              }
+            }
+          },
+          components: {
+            header: HelloWorld,
+            main: TheWelcome
+          }
         }
       ]
       // sensitive: true // https://router.vuejs.org/guide/essentials/route-matching-syntax.html#sensitive-and-strict-route-options
