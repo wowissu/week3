@@ -1,6 +1,7 @@
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
+import { myTabActiveKey } from '@/components/MyTabs/myTabsConst'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   // props: {
@@ -14,7 +15,7 @@ export default defineComponent({
   provide() {
     return {
       // explicitly provide a computed property
-      activeTabKey: this.activeTabName
+      [myTabActiveKey]: this.activeTabName
     }
   }
 })

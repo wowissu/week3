@@ -1,15 +1,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { myTabActiveKey } from './myTabsConst';
 
 export default defineComponent({
-  props: {
-    name: { required: true, type: String }
-  },
   inject: {
     activeTabKey: {
-      from: 'activeTabKey',
+      from: myTabActiveKey
     }
+  },
+  props: {
+    name: { required: true, type: String }
   },
   computed: {
     isActive() {
