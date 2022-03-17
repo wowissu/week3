@@ -1,11 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { RouterView } from 'vue-router'
+import { RouterView, RouterLink } from 'vue-router'
 
 export default defineComponent({
   name: 'HelloWorld',
   components: {
-    RouterView
+    RouterView,
+    RouterLink
   },
   props: {
     id: String
@@ -22,9 +23,15 @@ export default defineComponent({
 
 <template>
   <main>
-    <header>
+    <div>
+      <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+    </div>
+    <div>
+      <RouterLink :to="{ name: 'TheWelcome' }">TheWelcome</RouterLink>
+    </div>
+    <!-- <header>
       <RouterView name="header" />
-    </header>
+    </header> -->
     <RouterView name="main" />
   </main>
 </template>

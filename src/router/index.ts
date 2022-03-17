@@ -5,6 +5,8 @@ import TheWelcome from '@/components/TheWelcome.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'my-active-link',
+  linkExactActiveClass: 'my-exact-active-link',
   routes: [
     {
       path: '/',
