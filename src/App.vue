@@ -2,14 +2,14 @@
 import { defineComponent } from 'vue'
 import HomeView from './views/HomeView.vue'
 import HelloWorld from './components/HelloWorld.vue';
-import MyButton from '@/components/MyButton.vue'
+// import MyButton from '@/components/MyButton.vue'
 import MyInput from '@/components/MyInput.vue'
 
 export default defineComponent({
   components: {
     HomeView,
     HelloWorld,
-    MyButton,
+    // MyButton,
     MyInput
   },
   data() {
@@ -33,10 +33,17 @@ export default defineComponent({
       <HelloWorld msg="You did it!" />
 
       <div>
-        <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
+        <!-- <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton> -->
       </div>
       <div>
-        <MyInput v-model.capitalize="myText"></MyInput>
+        <div>show myText: {{ myText }}</div>
+
+        <MyInput v-model:content="myText"></MyInput>
+
+        <!-- <MyInput
+          :modelValue="myText"
+          @update:modelValue="val => myText = val"
+        ></MyInput> -->
       </div>
 
       <nav>
