@@ -1,7 +1,7 @@
 
 <script lang="ts">
 import { myTabActiveKey } from '@/components/MyTabs/myTabsConst'
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   // props: {
@@ -15,7 +15,10 @@ export default defineComponent({
   provide() {
     return {
       // explicitly provide a computed property
-      [myTabActiveKey]: this.activeTabName
+      [myTabActiveKey]: computed({
+        get: () => this.activeTabName,
+        set: (val: string) => { this.activeTabName = val }
+      }),
     }
   }
 })
@@ -23,6 +26,24 @@ export default defineComponent({
 
 <template>
   <div class="my-tabs">
-    <slot></slot>
+    <div>
+      active: {{ activeTabName }}
+    </div>
+    <div class="tabs-container">
+      <slot></slot>
+    </div>
   </div>
 </template>
+
+
+<style>
+
+.tabs-container {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+</style>

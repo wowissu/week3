@@ -14,17 +14,34 @@ export default defineComponent({
   },
   computed: {
     isActive() {
-      return this.activeTabKey === this.name
+      return this.activeTabKey.value === this.name
+    }
+  },
+  methods: {
+    setToActive() {
+      this.activeTabKey.value = this.name
+
+      // console.log(this.activeTabKey.value)
     }
   },
   created() {
-    console.log(this.activeTabKey);
+    console.log(this.activeTabKey.value);
   }
 })
 </script>
 
 <template>
-  <div class="my-tab" :class="{ active: isActive }">
+  <div class="my-tab" :style="{ color: isActive ? 'red' : '' }" @click="setToActive">
     <slot></slot>
   </div>
 </template>
+
+
+<style>
+
+.my-tab {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+</style>
