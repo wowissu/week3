@@ -7,15 +7,15 @@ import HomeView from './views/HomeView.vue'
 // import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
 // import MySlot from '@/components/MySlot.vue'
 // import MyTabs from '@/components/MyTabs/MyTabs.vue'
-import { AsyncMyTabs } from '@/components/MyTabs/AsyncMyTabs'
-import MyTab from '@/components/MyTabs/MyTab.vue'
+// import { AsyncMyTabs } from '@/components/MyTabs/AsyncMyTabs'
+// import MyTab from '@/components/MyTabs/MyTab.vue'
 
 export default defineComponent({
   components: {
     HomeView,
-    AsyncMyTabs,
+    // AsyncMyTabs,
     // MyTabs,
-    MyTab
+    // MyTab
     // MySlot
     // HelloWorld,
     // MyButton,
@@ -52,6 +52,8 @@ export default defineComponent({
       <!-- <HelloWorld msg="You did it!" /> -->
 
       <div>
+        {{ $date(new Date()) }}
+
         <!-- <div>
           <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
         </div>
@@ -77,14 +79,14 @@ export default defineComponent({
           </template>
         </MySlot> -->
 
-        <AsyncMyTabs v-if="showTab">
+        <!-- <AsyncMyTabs v-if="showTab">
           <MyTab name="first" >
             first
           </MyTab>
           <MyTab name="second" >
             second
           </MyTab>
-        </AsyncMyTabs>
+        </AsyncMyTabs> -->
       </div>
 
       <nav>
