@@ -1,14 +1,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import TheWelcome from '@/components/TheWelcome.vue'
+import {RouterView} from 'vue-router'
 
 export default defineComponent({
   name: 'HelloWorld',
+  components: {
+    RouterView
+  },
   props: {
     id: String
-  },
-  components: {
-    TheWelcome,
   },
   mounted() {
     // console.log(this.id);
@@ -18,10 +18,6 @@ export default defineComponent({
 
 <template>
   <main>
-    <TheWelcome />
-
-    <div>
-      {{ id }}
-    </div>
+    <RouterView />
   </main>
 </template>

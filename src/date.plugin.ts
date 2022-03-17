@@ -10,7 +10,7 @@ declare module '@vue/runtime-core' {
 
 export default {
   install(app, options) {
-    console.log(app, options);
+    // console.log(app, options);
 
     app.config.globalProperties.$date = function (date: Date) {
       return dayjs(date).format('YYYY-MM-DD');

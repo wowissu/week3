@@ -1,14 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import TheWelcome from '@/components/TheWelcome.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/:id',
+      path: '/',
       name: 'home',
       component: HomeView,
-      props: true,
+      children: [
+        {
+          path: 'TheWelcome',
+          component: TheWelcome
+        }
+      ]
+      // sensitive: true // https://router.vuejs.org/guide/essentials/route-matching-syntax.html#sensitive-and-strict-route-options
     },
     // {
     //   path: '/about',
@@ -18,7 +25,8 @@ const router = createRouter({
     //   // which is lazy-loaded when the route is visited.
     //   component: () => import('../views/AboutView.vue')
     // }
-  ]
+  ],
+  // strict: true
 })
 
 export default router
