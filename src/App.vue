@@ -5,20 +5,25 @@ import HomeView from './views/HomeView.vue'
 // import MyButton from '@/components/MyButton.vue'
 // import MyInput from '@/components/MyInput.vue'
 // import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
-import MySlot from '@/components/MySlot.vue'
+// import MySlot from '@/components/MySlot.vue'
+import MyTabs from '@/components/MyTabs/MyTabs.vue'
+import MyTab from '@/components/MyTabs/MyTab.vue'
 
 export default defineComponent({
   components: {
     HomeView,
-    MySlot
+    // MySlot
     // HelloWorld,
     // MyButton,
     // MyInput,
-    // FallthroughAttributes
+    // FallthroughAttributes,
+    MyTabs,
+    MyTab
   },
   data() {
     return {
-      myText: ''
+      myText: '',
+      currentTabName: 'first'
     }
   },
   methods: {
@@ -48,7 +53,7 @@ export default defineComponent({
           <FallthroughAttributes class="my-class" text="Fallthrough Attributes">
         </div> -->
 
-        <MySlot>
+        <!-- <MySlot>
           <template #header="{ foo }">
             <div>
               header {{ foo }}
@@ -60,7 +65,16 @@ export default defineComponent({
           <template #footer>
             footer
           </template>
-        </MySlot>
+        </MySlot> -->
+
+        <MyTabs>
+          <MyTab name="first" >
+            first
+          </MyTab>
+          <MyTab name="second" >
+            second
+          </MyTab>
+        </MyTabs>
       </div>
 
       <nav>
