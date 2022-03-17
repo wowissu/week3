@@ -6,6 +6,9 @@ export default defineComponent({
   name: 'HelloWorld',
   components: {
     TheWelcome,
+  },
+  mounted() {
+    console.log(this.$route.params);
   }
 })
 </script>
@@ -13,5 +16,9 @@ export default defineComponent({
 <template>
   <main>
     <TheWelcome />
+
+    <div>
+      {{ id }}
+    </div>
   </main>
 </template>

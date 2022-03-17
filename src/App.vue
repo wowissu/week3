@@ -1,28 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HomeView from './views/HomeView.vue'
-// import HelloWorld from './components/HelloWorld.vue';
-// import MyButton from '@/components/MyButton.vue'
-// import MyInput from '@/components/MyInput.vue'
-// import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
-// import MySlot from '@/components/MySlot.vue'
-// import MyTabs from '@/components/MyTabs/MyTabs.vue'
-// import { AsyncMyTabs } from '@/components/MyTabs/AsyncMyTabs'
-// import MyTab from '@/components/MyTabs/MyTab.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import { RouterView } from 'vue-router'
 
 export default defineComponent({
   components: {
-    HomeView,
-    // AsyncMyTabs,
-    // MyTabs,
-    // MyTab
-    // MySlot
-    // HelloWorld,
-    // MyButton,
-    // MyInput,
-    // FallthroughAttributes,
-    // MyTabs,
-    // MyTab
+    RouterView,
+    HelloWorld
   },
   data() {
     return {
@@ -49,45 +33,7 @@ export default defineComponent({
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-
-      <div>
-        {{ $date(new Date()) }}
-
-        <!-- <div>
-          <MyButton :text="'我的按鈕'" @addBook="onAddBook"></MyButton>
-        </div>
-        <div>
-          <MyInput v-model.capitalize="myText"></MyInput>
-        </div> -->
-
-        <!-- <div>
-          <FallthroughAttributes class="my-class" text="Fallthrough Attributes">
-        </div> -->
-
-        <!-- <MySlot>
-          <template #header="{ foo }">
-            <div>
-              header {{ foo }}
-            </div>
-          </template>
-          <template #default>
-            body
-          </template>
-          <template #footer>
-            footer
-          </template>
-        </MySlot> -->
-
-        <!-- <AsyncMyTabs v-if="showTab">
-          <MyTab name="first" >
-            first
-          </MyTab>
-          <MyTab name="second" >
-            second
-          </MyTab>
-        </AsyncMyTabs> -->
-      </div>
+      <HelloWorld msg="You did it!" />
 
       <nav>
         <!-- <RouterLink to="/">Home</RouterLink>
@@ -96,7 +42,7 @@ export default defineComponent({
     </div>
   </header>
 
-  <HomeView  />
+  <RouterView />
 </template>
 
 <style>
