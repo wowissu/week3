@@ -4,11 +4,14 @@ import TheWelcome from '@/components/TheWelcome.vue'
 
 export default defineComponent({
   name: 'HelloWorld',
+  props: {
+    id: String
+  },
   components: {
     TheWelcome,
   },
   mounted() {
-    console.log(this.$route.params);
+    // console.log(this.id);
   }
 })
 </script>
