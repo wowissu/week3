@@ -11,6 +11,7 @@ const router = createRouter({
       component: HomeView,
       children: [
         {
+          name: 'TheWelcome',
           path: 'TheWelcome',
           component: TheWelcome
         }

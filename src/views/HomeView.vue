@@ -12,6 +12,10 @@ export default defineComponent({
   },
   mounted() {
     // console.log(this.id);
+
+    setTimeout(() => {
+      this.$router.push({ name: 'TheWelcome' })
+    }, 2000)
   }
 })
 </script>
