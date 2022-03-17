@@ -24,7 +24,11 @@ export default defineComponent({
 <template>
   <main>
     <div>
-      <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+      <RouterLink :to="{ name: 'home' }" v-slot="{ navigate, }">
+        <div @click="navigate">
+          My Custom Home link
+        </div>
+      </RouterLink>
     </div>
     <div>
       <RouterLink :to="{ name: 'TheWelcome' }">TheWelcome</RouterLink>
