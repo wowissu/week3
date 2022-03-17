@@ -6,22 +6,27 @@ import HomeView from './views/HomeView.vue'
 // import MyInput from '@/components/MyInput.vue'
 // import FallthroughAttributes from '@/components/FallthroughAttributes.vue'
 // import MySlot from '@/components/MySlot.vue'
-import MyTabs from '@/components/MyTabs/MyTabs.vue'
+// import MyTabs from '@/components/MyTabs/MyTabs.vue'
+import { AsyncMyTabs } from '@/components/MyTabs/AsyncMyTabs'
 import MyTab from '@/components/MyTabs/MyTab.vue'
 
 export default defineComponent({
   components: {
     HomeView,
+    AsyncMyTabs,
+    // MyTabs,
+    MyTab
     // MySlot
     // HelloWorld,
     // MyButton,
     // MyInput,
     // FallthroughAttributes,
-    MyTabs,
-    MyTab
+    // MyTabs,
+    // MyTab
   },
   data() {
     return {
+      showTab: false,
       myText: '',
       currentTabName: 'first'
     }
@@ -30,6 +35,11 @@ export default defineComponent({
     onAddBook(payload: any) {
       console.log(payload);
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showTab = true
+    }, 2000)
   }
 })
 </script>
@@ -67,14 +77,14 @@ export default defineComponent({
           </template>
         </MySlot> -->
 
-        <MyTabs>
+        <AsyncMyTabs v-if="showTab">
           <MyTab name="first" >
             first
           </MyTab>
           <MyTab name="second" >
             second
           </MyTab>
-        </MyTabs>
+        </AsyncMyTabs>
       </div>
 
       <nav>
